@@ -19,7 +19,7 @@ export default function Card({
       <p>{status}</p>
       <p>{species}</p>
       <p>{gender}</p>
-      <personalbar>{origin}</personalbar>
+      <p>{origin}</p>
       </div>
    
       <img src={image} alt="" />
