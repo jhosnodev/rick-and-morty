@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
+import "./App.css";
+import Cards from "./components/Cards.jsx";
+import Navbar from "./components/Navbar";
+import characters from "./data.js";
 
 function App() {
+  const [character, setCharacter] = useState([]);
+  const onSearch = () => {
+    setCharacter([...character]);
+  };
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar onSearch={onSearch} />
+      <Cards characters={characters} />
     </div>
   );
 }
