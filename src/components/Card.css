@@ -2,7 +2,7 @@
   border-radius: 8px;
   padding: 1rem;
   background: #111;
-  margin: 1rem;
+
   display: flex;
   align-content: center;
   justify-content: center;
@@ -10,24 +10,34 @@
   flex-direction: column;
   position: relative;
   top: 0;
+  border: 1px solid #c7e9ef1a;
   border-radius: 8px;
   transition: all 2s ease-in-out;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 .card img {
-  max-width: 10rem;
-  border-radius: 4px;
+  max-width: 18rem;
+  border-radius: 50%;
   cursor: crosshair;
 }
 .card button {
   border: none;
   cursor: pointer;
-  align-self: flex-end;
   border-radius: 4px;
-  background: #88dd6e;
-  color: #111;
+  background: #1b005f;
+  border: 1px solid #c7e9ef1a;
+  color: #88dd6e;
   font-weight: 600;
   transition: all 2s ease-in-out;
-  margin-bottom: 0.5rem;
+}
+.card___info-header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 .card button:hover {
   background: #88dd6e7d;
@@ -61,8 +71,7 @@
   font-size: 1rem;
 }
 .card:hover .card___info-content {
-    
-    display: block;
+  display: block;
 }
 .card img:hover .card___info-content {
   display: block;

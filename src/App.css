@@ -7,22 +7,28 @@ root {
 }
 .App {
   text-align: center;
-  background: rgba(27, 0, 95, 1);
-  background: linear-gradient(
-    0deg,
-    rgba(17, 17, 17, 1) 0%,
-    rgba(27, 0, 95, 1) 100%
-  );
-  min-height: 100vh;
+  width: 100%;
+  min-height: 100%;
+  background: rgb(17,17,17);
+background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(27,0,95,1) 30%);
+  height: 100%;
   font-family: "Bagel Fat One", cursive;
   color: #0eaac2;
   box-sizing: border-box;
+}
+@media screen and (max-width: 768px) {
+  .App {
+    width: 100vw;
+    height: 100%;
+  }
+  
 }
 
 p,
 a,
 ul,
 ol,
-i {
+i,
+span {
   font-family: "Outfit", sans-serif;
 }

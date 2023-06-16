@@ -1,6 +1,6 @@
 .navbar {
   background: rgba(49, 47, 56, 0.627);
- 
+
   position: sticky;
   top: 0;
   z-index: 9999999999;
@@ -10,31 +10,48 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: nowrap;
-  padding: 0.3rem 1rem;
+  padding: 1rem 2rem;
   box-sizing: border-box;
+  box-shadow: rgba(67, 71, 85, 0.27) 0px 0px 0.25em, rgba(90, 125, 188, 0.05) 0px 0.25em 1em;
 }
 .navbar___search-content {
-    display: flex;
-    justify-content: center;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  flex-wrap: nowrap;
+}
+.navbar___search-content div {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
 .navbar___search-content button:hover {
-    background: rgb(54, 48, 74);
-
+  background: rgb(87 46 223);
 }
-.navbar___search-content button {
-    border-radius: 0 8px 8px 0;
-    height: 1.65rem;
-    border: none;
-    font-weight: 600;
-    cursor: pointer;
-    background: rgb(49, 47, 56);
-    transition: all 2s ease-in-out;
+.navbar___search-random-btn {
+  border-radius: 8px;
+  height: 1.65rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgb(49, 47, 56);
+  transition: all .5s ease-in-out;
+  color: aquamarine;
+  margin-left: 1rem;
 }
-.navbar___search-content input {
+.navbar___search-search-btn {
+  border-radius: 0 8px 8px 0;
+  height: 1.65rem;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgb(49, 47, 56);
+  transition: all .5s ease-in-out;
+}
+.navbar___search-input {
   background: #111;
   list-style: none;
   outline: none;
@@ -46,4 +63,20 @@
 }
 .navbar___logo {
   max-height: 3rem;
+}
+.navbar___search-input-alert {
+  border: 1px solid #e9572269;
+}
+.navbar___search-alert {
+  width: 100%;
+  align-self: baseline;
+  color: #e95722;
+  padding: 0.2rem 0.3rem 0.3rem 0rem;
+  margin: 0;
+  visibility: hidden;
+  font-size: 0.8rem;
+  text-align: left;
+}
+.navbar___search-input-alert-vissible {
+  visibility: visible;
 }
