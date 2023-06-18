@@ -1,11 +1,15 @@
 import { useState } from "react";
 import "./normalize.css";
 import "./App.css";
-import Cards from "./components/Cards.jsx";
-import Navbar from "./components/Navbar";
+import Cards from "./components/Cards/Cards.jsx";
+import Navbar from "./components/Navbar/Navbar";
 import axios from "axios";
-import Alert from "./components/Alert";
-import Footer from "./components/Footer";
+import Alert from "./components/Alert/Alert";
+import Footer from "./components/Footer/Footer";
+import About from "./components/About/About";
+import Detail from "./components/detail/Detail";
+import { Route, Routes } from "react-router-dom";
+import Error from './components/error404/Error'
 
 // import characters from "./data.js";
 function App() {
@@ -37,7 +41,16 @@ function App() {
   return (
     <div className="App" id="app">
       <Navbar onSearch={onSearch} />
-      <Cards characters={characters} onClose={onClose} />
+      <Routes>
+        <Route
+          path="/"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route path="/about" element={<About />} />
+        <Route path="/detail/:id" element={<Detail />} />
+        <Route path="*" element={<Error />} />
+      </Routes>
+
       <Footer />
     </div>
   );

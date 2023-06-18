@@ -1,4 +1,5 @@
 import "./Card.css";
+import { Link } from "react-router-dom";
 export default function Card({
   id,
   name,
@@ -18,7 +19,9 @@ export default function Card({
       <div className="card___info-content">
         <div className="card___info-header">
           <p>{id}</p>
-          <h2>{name}</h2>
+          <Link to={`detail/${id}`}>
+            <h2>{name}</h2>
+          </Link>
           <button onClick={getIDToClose}>X</button>
         </div>
         <p>{status}</p>
