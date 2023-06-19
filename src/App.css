@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Outfit:wght@400;700&display=swap");
 
+  @import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
+
 root {
   --verde-segundario: #88dd6e;
   --turquesa-prin: #0eaac2;
@@ -12,7 +14,7 @@ root {
   background: rgb(17,17,17);
 background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(27,0,95,1) 30%);
   height: 100%;
-  font-family: "Bagel Fat One", cursive;
+  font-family: 'Eater', cursive;
   color: #0eaac2;
   box-sizing: border-box;
 }
