@@ -19,12 +19,15 @@ export default function Card({
       <div className="card___info-content">
         <div className="card___info-header">
           <p>{id}</p>
-          <NavLink to={`detail/${id}`}>
-            <h2>{name}</h2>
-          </NavLink>
           <button onClick={getIDToClose}>X</button>
         </div>
-        <NavLink to={`detail/${id}`}>See more</NavLink>
+        <div className="card___info-body">
+        <NavLink to={`detail/${id}`}>
+          <h2>{name}</h2>
+        </NavLink>
+        <NavLink to={`detail/${id}`} className={'navbar___search-random-btn'}>See more</NavLink>
+
+        </div>
       </div>
       <img src={image} alt="" />
       <h2>{name}</h2>

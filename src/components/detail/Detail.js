@@ -19,19 +19,23 @@ const Detail = () => {
     );
     return setCharacter({});
   }, [id]);
-console.log(character)
+  console.log(character);
   return (
     <div className="detail___container">
       <div className="detail___header">
-      <h2>{character.name}</h2>
-      <p>{character.id}</p>
-      </div> 
+        <h2>{character.name}</h2>
+        <p>{character.id}</p>
+      </div>
       <div className="detail___card">
         <div className="detail___card-info">
-
           <div className="card-info___tag">
             <h3>Status</h3>
-            <p>{character.status}</p>
+            <p className={`bullet-status ${
+                  character.status === "Alive" ? "alive" : "no-alive"
+                }`}>
+     
+              {character.status}
+            </p>
           </div>
           <div className="card-info___tag">
             <h3>Especie</h3>
@@ -39,7 +43,7 @@ console.log(character)
           </div>
           <div className="card-info___tag">
             <h3>Tipo</h3>
-            <p>{character.type}</p>
+            <p>{character.type === "" ? "????" : character.type}</p>
           </div>
           <div className="card-info___tag">
             <h3>Genero</h3>
@@ -47,7 +51,7 @@ console.log(character)
           </div>
           <div className="card-info___tag">
             <h3>Origen</h3>
-            <p>{character.origin?.name ? character.origin?.name : '?????'}</p>
+            <p>{character.origin?.name ? character.origin?.name : "?????"}</p>
           </div>
         </div>
         <img src={character.image} alt="" />

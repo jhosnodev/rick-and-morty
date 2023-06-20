@@ -37,3 +37,17 @@ i,
 span {
   font-family: "Assistant", sans-serif;
 }
+.navbar button:hover,.navbar___search-random-btn:hover  {
+  background: rgb(87 46 223);
+}
+.navbar___search-random-btn {
+  border-radius: 8px;
+  height: 1.65rem;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  background: rgb(49, 47, 56);
+  transition: all 0.5s ease-in-out;
+  color: aquamarine;
+}
