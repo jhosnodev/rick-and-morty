@@ -45,27 +45,38 @@ function App() {
   const login = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
       console.log("login success");
-      setAccess(!access)
-      navigate('/home')
-    }else{
-      alert('email o contraseña no válidos!')
+      setAccess(!access);
+     
+    } else {
+      alert("email o contraseña no válidos!");
     }
   };
-  const logout =() => setAccess(!access)
+
+  const logout = () => setAccess(!access);
   useEffect(() => {
-    !access && navigate('/');
- }, [access]);
+    !access && navigate("/");
+  }, [access]);
+
   return (
     <div className="App" id="app">
       <Navbar onSearch={onSearch} logout={logout} access={access} />
       <Routes>
-        <Route
+        {/*    <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}
-        />
+        /> */}
         <Route path="/about" element={<About />} />
-        <Route path="/" element={<Form login={login} />} />
-        <Route path="/detail/:id" element={<Detail />} />
+        <Route
+          path="/"
+          element={
+            access ? (
+              <Cards characters={characters} onClose={onClose} />
+            ) : (
+              <Form login={login} />
+            )
+          }
+        />
+        <Route path="detail/:id" element={<Detail />} />
         <Route path="*" element={<Error />} />
       </Routes>
 

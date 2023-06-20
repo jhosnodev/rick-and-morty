@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Outfit:wght@400;700&display=swap");
 
-  @import url('https://fonts.googleapis.com/css2?family=Eater&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Eater&display=swap");
 
 root {
   --verde-segundario: #88dd6e;
@@ -11,10 +11,14 @@ root {
   text-align: center;
   width: 100%;
   min-height: 100%;
-  background: rgb(17,17,17);
-background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(27,0,95,1) 30%);
+  background: rgb(17, 17, 17);
+  background: linear-gradient(
+    0deg,
+    rgba(17, 17, 17, 1) 0%,
+    rgba(27, 0, 95, 1) 30%
+  );
   height: 100%;
-  font-family: 'Eater', cursive;
+  font-family: "Eater", cursive;
   color: #0eaac2;
   box-sizing: border-box;
 }
@@ -23,7 +27,6 @@ background: linear-gradient(0deg, rgba(17,17,17,1) 0%, rgba(27,0,95,1) 30%);
     width: 100vw;
     height: 100%;
   }
-  
 }
 
 p,

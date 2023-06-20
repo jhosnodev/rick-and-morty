@@ -1,0 +1,83 @@
+.login___container {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 2rem;
+  min-height: 80vh;
+}
+
+.login___container h2 {
+    color: #88dd6e;
+}
+.login___form {
+    box-shadow: rgba(14, 170, 194, 0.349) 0px 4px 12px;
+  background: #111;
+  padding: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  border-radius: 8px;
+  width: 30%;
+  height: 100%;
+  box-sizing: border-box;
+  margin: 1rem 0;
+}
+.login___form button:hover {
+    background: rgb(87 46 223);
+}
+
+.login___form button {
+    width: 100%;
+    border-radius: 8px;
+    height: 1.65rem;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    background: rgb(49, 47, 56);
+    transition: all 0.5s ease-in-out;
+    color: aquamarine;
+    margin-left: 1rem;
+}
+.login___form label {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: nowrap;
+ 
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: .5rem;
+}
+.login___form input {
+  padding: 0.5rem;
+  list-style: none;
+  border-style: none;
+  border-radius: 8px;
+  font-family: "Outfit", sans-serif;
+  color: rgb(95, 162, 137);
+  background-color: rgb(27, 40, 60);
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: .5rem;
+}
+
+.login___form-error {
+  width: 100%;
+  align-self: baseline;
+  color: #e95722;
+  padding: 0.2rem 0.3rem 0.3rem 0rem;
+  margin: 0;
+  font-size: 0.8rem;
+  text-align: left;
+}

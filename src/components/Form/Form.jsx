@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import errors from "./validations";
-
+import "./Form.css";
 const Form = ({ login }) => {
   const [userData, setUserData] = useState({
     email: "",
@@ -27,30 +27,33 @@ const Form = ({ login }) => {
     }
   };
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Email
-        <input
-          type="email"
-          value={userData.email}
-          name="email"
-          onChange={handleChanges}
-        />
-        <span>{error?.email}</span>
-      </label>
+    <div className="login___container">
+      <h2>Has login para empezar</h2>
+      <form className="login___form" onSubmit={handleSubmit}>
+        <label>
+          Email
+          <input
+            type="email"
+            value={userData.email}
+            name="email"
+            onChange={handleChanges}
+          />
+          <span className="login___form-error">{error?.email}</span>
+        </label>
 
-      <label>
-        Password
-        <input
-          type="password"
-          name="password"
-          value={userData.password}
-          onChange={handleChanges}
-        />
-        <span>{error?.password}</span>
-      </label>
-      <button>Submit</button>
-    </form>
+        <label>
+          Password
+          <input
+            type="password"
+            name="password"
+            value={userData.password}
+            onChange={handleChanges}
+          />
+          <span className="login___form-error">{error?.password}</span>
+        </label>
+        <button>Submit</button>
+      </form>
+    </div>
   );
 };
 

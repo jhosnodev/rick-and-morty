@@ -12,34 +12,42 @@ export default function SearchBar({ onSearch }) {
     if (id && !alert) onSearch(id);
     setID("");
   };
-  const getRandom = ()=>{
-    onSearch(Math.floor(Math.random() * 826))
-  }
+  const getRandom = () => {
+    onSearch(Math.floor(Math.random() * 826));
+  };
   return (
-    <div className="navbar___search-content">
-      <div>
-        <input
-          className={`navbar___search-input ${
-            alert ? "navbar___search-input-alert" : ""
-          }`}
-          type="search"
-          placeholder="search ID..."
-          value={id}
-          onChange={handleChange}
-        />
-        <button onClick={searchElement} className="navbar___search-search-btn">
-          🔍
-        </button>
-        <button className="navbar___search-random-btn"
-        onClick={getRandom}>Random</button>
+    <div className="navbar___right-content">
+      <div className="navbar___search-content">
+        <div>
+          <input
+            className={`navbar___search-input ${
+              alert ? "navbar___search-input-alert" : ""
+            }`}
+            type="search"
+            placeholder="search ID..."
+            value={id}
+            onChange={handleChange}
+          />
+          <button
+            onClick={searchElement}
+            className="navbar___search-search-btn"
+          >
+            🔍
+          </button>
+
+        </div>
+          <span
+            className={`navbar___search-alert ${
+              alert ? "navbar___search-input-alert-vissible" : ""
+            }`}
+          >
+            Debes colocar solo números
+          </span>
+        
       </div>
-      <span
-        className={`navbar___search-alert ${
-          alert ? "navbar___search-input-alert-vissible" : ""
-        }`}
-      >
-        Debes colocar solo números
-      </span>
+      <button className="navbar___search-random-btn" onClick={getRandom}>
+        Random
+      </button>
     </div>
   );
 }
