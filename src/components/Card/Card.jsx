@@ -1,5 +1,5 @@
 import "./Card.css";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 export default function Card({
   id,
   name,
@@ -19,15 +19,12 @@ export default function Card({
       <div className="card___info-content">
         <div className="card___info-header">
           <p>{id}</p>
-          <Link to={`detail/${id}`}>
+          <NavLink to={`detail/${id}`}>
             <h2>{name}</h2>
-          </Link>
+          </NavLink>
           <button onClick={getIDToClose}>X</button>
         </div>
-        <p>{status}</p>
-        <p>{species}</p>
-        <p>{gender}</p>
-        <p>{origin}</p>
+        <NavLink to={`detail/${id}`}>See more</NavLink>
       </div>
       <img src={image} alt="" />
       <h2>{name}</h2>
