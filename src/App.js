@@ -15,7 +15,7 @@ import Form from "./components/Form/Form";
 // import characters from "./data.js";
 function App() {
   const [characters, setCharacters] = useState([]);
-  const [alert, setAlert] = useState({ });
+  const [alert, setAlert] = useState({});
   const IDChecker = (id) => {
     //const result = characters.map((char) => char.id);
     return characters.map((char) => char.id).includes(Number(id));
@@ -32,13 +32,12 @@ function App() {
             alert("¡No hay personajes con este ID!");
           }
         })
-        .catch(({ error }) => {
+        .catch(({ message }) => {
+          console.log(message);
           setAlert({
-            message: error.message,
+            message: message,
             type: "error",
           });
-
-          console.log(error);
         });
     }
   }
@@ -46,7 +45,6 @@ function App() {
     const result = characters.filter((char) => char.id !== id);
     setCharacters(result);
   };
-  const navigate = useNavigate();
   const [access, setAccess] = useState(false);
   const EMAIL = "jhosno.dev@gmail.com";
   const PASSWORD = "password11";
@@ -59,10 +57,10 @@ function App() {
         message: "¡Email o contraseña inválidos!",
         type: "warning",
       });
-      alert("email o contraseña no válidos!");
     }
   };
 
+  const navigate = useNavigate();
   const logout = () => setAccess(!access);
   useEffect(() => {
     !access && navigate("/");
@@ -72,7 +70,11 @@ function App() {
   return (
     <div className="App" id="app">
       <Navbar onSearch={onSearch} logout={logout} access={access} />
-      {alert.message ? <Alert message={alert.message} type={alert.type} /> : ""}
+      {alert.message ? (
+        <Alert message={alert.message} type={alert.type} setAlert={setAlert} />
+      ) : (
+        ""
+      )}
       <Routes>
         <Route
           path="/home"
