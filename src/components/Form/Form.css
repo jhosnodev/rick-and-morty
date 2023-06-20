@@ -15,7 +15,8 @@
     color: #88dd6e;
 }
 .login___form {
-    box-shadow: rgba(14, 170, 194, 0.349) 0px 4px 12px;
+  box-shadow: #61c024 0px 4px 12px;
+  border: 1px #c8df6a solid;
   background: #111;
   padding: 3rem 1.8rem;
   display: flex;
@@ -38,7 +39,7 @@
 .login___form button {
     width: 100%;
     border-radius: 8px;
-    height: 1.65rem;
+    min-height: 1.65rem;
     border: none;
     font-weight: 600;
     cursor: pointer;
@@ -46,6 +47,7 @@
     transition: all 0.5s ease-in-out;
     color: aquamarine;
     margin-left: 1rem;
+    padding: 1rem 1rem;
 }
 .login___form label {
   display: flex;
@@ -54,6 +56,7 @@
   align-items: flex-start;
   justify-content: center;
   flex-wrap: nowrap;
+  font-weight: 600;
  
   width: 100%;
   box-sizing: border-box;
@@ -65,7 +68,7 @@
   border-style: none;
   border-radius: 8px;
   font-family: "Outfit", sans-serif;
-  color: rgb(95, 162, 137);
+  color: #88dd6e;
   background-color: rgb(27, 40, 60);
   width: 100%;
   box-sizing: border-box;

@@ -15,6 +15,7 @@ import Form from "./components/Form/Form";
 // import characters from "./data.js";
 function App() {
   const [characters, setCharacters] = useState([]);
+  const [alert, setAlert] = useState({ });
   const IDChecker = (id) => {
     //const result = characters.map((char) => char.id);
     return characters.map((char) => char.id).includes(Number(id));
@@ -23,15 +24,22 @@ function App() {
     if (IDChecker(id)) {
       alert("ID repetido");
     } else {
-      axios(`https://rickandmortyapi.com/api/character/${id}`).then(
-        ({ data }) => {
+      axios(`https://rickandmortyapi.com/api/character/${id}`)
+        .then(({ data }) => {
           if (data.name) {
             setCharacters((oldChars) => [...oldChars, data]);
           } else {
-            window.alert("¡No hay personajes con este ID!");
+            alert("¡No hay personajes con este ID!");
           }
-        }
-      );
+        })
+        .catch(({ error }) => {
+          setAlert({
+            message: error.message,
+            type: "error",
+          });
+
+          console.log(error);
+        });
     }
   }
   const onClose = (id) => {
@@ -46,8 +54,11 @@ function App() {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
       console.log("login success");
       setAccess(!access);
-     
     } else {
+      setAlert({
+        message: "¡Email o contraseña inválidos!",
+        type: "warning",
+      });
       alert("email o contraseña no válidos!");
     }
   };
@@ -56,15 +67,17 @@ function App() {
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
+  useEffect(() => {}, [alert]);
 
   return (
     <div className="App" id="app">
       <Navbar onSearch={onSearch} logout={logout} access={access} />
+      {alert.message ? <Alert message={alert.message} type={alert.type} /> : ""}
       <Routes>
-        {/*    <Route
+        <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}
-        /> */}
+        />
         <Route path="/about" element={<About />} />
         <Route
           path="/"

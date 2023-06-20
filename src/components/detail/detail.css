@@ -12,10 +12,14 @@
 }
 .detail___header p{
     font-weight: 800;
-    font-size: 1.5rem;
+    font-size: 3rem;
+    margin: 0;
 }
 .detail___header h2{
     color:#88dd6e;
+    font-size: 3rem;
+    margin: 0;
+
 }
 .detail___header{
     display: flex;
@@ -30,7 +34,8 @@
     border-radius: 50%;
 }
 .detail___card {
-  box-shadow: rgba(14, 170, 194, 0.349) 0px 4px 12px;
+  box-shadow: #61c024 0px 4px 12px;
+  border: 1px #c8df6a solid;
   background: #111;
   padding: 1rem 3rem;
   display: flex;

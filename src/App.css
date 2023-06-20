@@ -1,10 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Outfit:wght@400;700&display=swap");
-
-@import url("https://fonts.googleapis.com/css2?family=Eater&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@400;600&family=K2D:wght@400;600&display=swap');
 root {
   --verde-segundario: #88dd6e;
   --turquesa-prin: #0eaac2;
+  --otro-verde: #c8df6a;
+  --verde-oscuro: #61c024;
   --color: #1b005f;
 }
 .App {
@@ -16,14 +15,15 @@ root {
     0deg,
     rgba(17, 17, 17, 1) 0%,
     rgba(27, 0, 95, 1) 30%
-  );
-  height: 100%;
-  font-family: "Eater", cursive;
-  color: #0eaac2;
-  box-sizing: border-box;
-}
-@media screen and (max-width: 768px) {
-  .App {
+    );
+    height: 100%;
+    font-family: "Eater", cursive;
+    color: #0eaac2;
+    box-sizing: border-box;
+    font-family: 'K2D', sans-serif;
+  }
+  @media screen and (max-width: 768px) {
+    .App {
     width: 100vw;
     height: 100%;
   }
@@ -35,5 +35,6 @@ ul,
 ol,
 i,
 span {
-  font-family: "Outfit", sans-serif;
+    
+  font-family: 'Assistant', sans-serif;
 }

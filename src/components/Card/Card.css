@@ -13,7 +13,8 @@
   border: 1px solid #c7e9ef1a;
   border-radius: 8px;
   transition: all 2s ease-in-out;
-  box-shadow: rgba(14, 170, 194, 0.349) 0px 4px 12px;
+  box-shadow: #61c024 0px 4px 12px;
+  border: 1px #c8df6a solid;
 }
 .card img {
   max-width: 18rem;

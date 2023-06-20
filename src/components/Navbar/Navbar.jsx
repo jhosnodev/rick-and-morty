@@ -13,12 +13,8 @@ const Navbar = ({ onSearch, logout, access }) => {
           <img src={logo} alt="logo | Rick & Morty" className="navbar___logo" />
         </Link>
 
-        <Link to={"/home"}>
-          <button>Home</button>
-        </Link>
-        <Link to={"/about"}>
-          <button>About</button>
-        </Link>
+        <NavLink to={"/home"}>Home</NavLink>
+        <NavLink to={"/about"}>About</NavLink>
         {access ? (
           <button onClick={logout} className="navbar___search-random-btn">
             Logout
