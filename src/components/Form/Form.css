@@ -17,7 +17,7 @@
 .login___form {
     box-shadow: rgba(14, 170, 194, 0.349) 0px 4px 12px;
   background: #111;
-  padding: 1rem 3rem;
+  padding: 3rem 1.8rem;
   display: flex;
   flex-direction: column;
   align-content: center;
