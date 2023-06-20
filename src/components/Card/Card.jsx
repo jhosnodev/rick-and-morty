@@ -22,11 +22,12 @@ export default function Card({
           <button onClick={getIDToClose}>X</button>
         </div>
         <div className="card___info-body">
-        <NavLink to={`detail/${id}`}>
-          <h2>{name}</h2>
-        </NavLink>
-        <NavLink to={`detail/${id}`} className={'navbar___search-random-btn'}>See more</NavLink>
-
+          <NavLink to={`detail/${id}`}>
+            <h2>{name}</h2>
+          </NavLink>
+          <NavLink to={`detail/${id}`} className={"navbar___search-random-btn"}>
+            See more
+          </NavLink>
         </div>
       </div>
       <img src={image} alt="" />

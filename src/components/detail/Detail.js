@@ -30,10 +30,11 @@ const Detail = () => {
         <div className="detail___card-info">
           <div className="card-info___tag">
             <h3>Status</h3>
-            <p className={`bullet-status ${
-                  character.status === "Alive" ? "alive" : "no-alive"
-                }`}>
-     
+            <p
+              className={`bullet-status ${
+                character.status === "Alive" ? "alive" : "no-alive"
+              }`}
+            >
               {character.status}
             </p>
           </div>

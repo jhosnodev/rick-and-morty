@@ -37,7 +37,8 @@ i,
 span {
   font-family: "Assistant", sans-serif;
 }
-.navbar button:hover,.navbar___search-random-btn:hover  {
+.navbar button:hover,
+.navbar___search-random-btn:hover {
   background: rgb(87 46 223);
 }
 .navbar___search-random-btn {
