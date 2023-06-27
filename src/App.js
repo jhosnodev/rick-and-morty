@@ -8,7 +8,7 @@ import Alert from "./components/Alert/Alert";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Detail from "./components/detail/Detail";
-import { Route, Routes, useNavigate } from "react-router-dom";
+import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import Error from "./components/error404/Error";
 import Form from "./components/Form/Form";
 
@@ -22,18 +22,25 @@ function App() {
   };
   function onSearch(id) {
     if (IDChecker(id)) {
-      alert("ID repetido");
+  
+      setAlert({
+        message:"ID repetido",
+        type: "error",
+      })
     } else {
       axios(`https://rickandmortyapi.com/api/character/${id}`)
         .then(({ data }) => {
           if (data.name) {
-            setCharacters((oldChars) => [...oldChars, data]);
+            setCharacters((oldChars) => [...oldChars, data].reverse());
           } else {
-            alert("¡No hay personajes con este ID!");
+
+            setAlert({
+              message: "¡No hay personajes con este ID!",
+              type: "error",
+            })
           }
         })
         .catch(({ message }) => {
-          console.log(message);
           setAlert({
             message: message,
             type: "error",
@@ -50,8 +57,8 @@ function App() {
   const PASSWORD = "password11";
   const login = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
-      console.log("login success");
-      setAccess(!access);
+      setAccess(true);
+      navigate("/home");
     } else {
       setAlert({
         message: "¡Email o contraseña inválidos!",
@@ -61,15 +68,18 @@ function App() {
   };
 
   const navigate = useNavigate();
-  const logout = () => setAccess(!access);
+  const logout = () => setAccess(false);
   useEffect(() => {
     !access && navigate("/");
   }, [access]);
   useEffect(() => {}, [alert]);
+  const { pathname } = useLocation();
 
   return (
     <div className="App" id="app">
-      <Navbar onSearch={onSearch} logout={logout} access={access} />
+      {pathname !== "/" ? (
+        <Navbar onSearch={onSearch} logout={logout} access={access} />
+      ) : null}
       {alert.message ? (
         <Alert message={alert.message} type={alert.type} setAlert={setAlert} />
       ) : (
@@ -81,17 +91,8 @@ function App() {
           element={<Cards characters={characters} onClose={onClose} />}
         />
         <Route path="/about" element={<About />} />
-        <Route
-          path="/"
-          element={
-            access ? (
-              <Cards characters={characters} onClose={onClose} />
-            ) : (
-              <Form login={login} />
-            )
-          }
-        />
-        <Route path="detail/:id" element={<Detail />} />
+        <Route path="/" element={<Form login={login} />} />
+        <Route path="home/detail/:id" element={<Detail />} />
         <Route path="*" element={<Error />} />
       </Routes>
 

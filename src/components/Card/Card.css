@@ -17,10 +17,14 @@
   box-shadow: #61c024 0px 4px 12px;
   border: 1px #c8df6a solid;
 }
+#Glyph{
+  margin-right: .2rem ;
+}
 .card img {
   max-width: 18rem;
   border-radius: 50%;
   cursor: crosshair;
+
   animation: portal 1.5s ease-in-out infinite;
 }
 .card button {
@@ -115,9 +119,7 @@
  line-height: 1.2rem;
  
 }
-.bullet-status::before{
 
-} 
 .no-alive::before{
   content: '';
   display: inline-block;

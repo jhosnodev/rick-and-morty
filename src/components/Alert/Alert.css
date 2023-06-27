@@ -23,6 +23,7 @@
   min-height: 20%;
   box-shadow: rgb(93, 16, 226) 0px 20px 30px -10px;
   transition: all 1s ease-in-out;
+  min-width: 25%;
 }
 
 .alert___card-header {

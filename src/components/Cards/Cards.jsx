@@ -3,7 +3,7 @@ import "./Cards.css";
 
 export default function Cards({ characters, onClose }) {
   return (
-    <div className="cards">
+    <main className="cards">
       {characters.map((character) => (
         <Card
           id={character.id}
@@ -17,6 +17,6 @@ export default function Cards({ characters, onClose }) {
           onClose={onClose}
         />
       ))}
-    </div>
+    </main>
   );
 }

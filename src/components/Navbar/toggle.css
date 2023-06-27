@@ -1,0 +1,19 @@
+.navbar___toggle-menu-content{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+  
+    background : #111;
+  }
+  .navbar___closeMenu {
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    background: #1b005f;
+    border: 1px solid #c7e9ef1a;
+    color: #88dd6e;
+    font-weight: 600;
+    transition: all 1s ease-in-out;
+  }

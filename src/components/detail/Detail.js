@@ -21,7 +21,7 @@ const Detail = () => {
   }, [id]);
   console.log(character);
   return (
-    <div className="detail___container">
+    <main className="detail___container">
       <div className="detail___header">
         <h2>{character.name}</h2>
         <p>{character.id}</p>
@@ -57,7 +57,7 @@ const Detail = () => {
         </div>
         <img src={character.image} alt="" />
       </div>
-    </div>
+    </main>
   );
 };
 
