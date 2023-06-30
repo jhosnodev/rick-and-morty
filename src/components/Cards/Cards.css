@@ -3,11 +3,11 @@
   margin-bottom: 1.5rem;
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  align-content: flex-start;
-  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
   flex-direction: row;
   gap: 2rem;
   padding: 2rem;
   min-height: 80vh;
+  justify-content: space-evenly;
 }

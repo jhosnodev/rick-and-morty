@@ -11,6 +11,7 @@ import Detail from "./components/detail/Detail";
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import Error from "./components/error404/Error";
 import Form from "./components/Form/Form";
+import Favorites from "./components/favorites/favorites";
 
 // import characters from "./data.js";
 function App() {
@@ -86,6 +87,14 @@ function App() {
         ""
       )}
       <Routes>
+        <Route
+          path="/home"
+          element={<Cards characters={characters} onClose={onClose} />}
+        />
+        <Route
+          path="/favorites"
+          element={<Favorites characters={characters} onClose={onClose} />}
+        />
         <Route
           path="/home"
           element={<Cards characters={characters} onClose={onClose} />}

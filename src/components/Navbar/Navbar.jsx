@@ -22,6 +22,9 @@ const Navbar = ({ onSearch, logout, access }) => {
         <NavLink to={"/home"} className={"navbar___links"}>
           Home
         </NavLink>
+        <NavLink to={"/favorites"} className={"navbar___links"}>
+          Favs
+        </NavLink>
         <NavLink to={"/about"} className={"navbar___links"}>
           About
         </NavLink>
