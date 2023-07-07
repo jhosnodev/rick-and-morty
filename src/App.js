@@ -23,7 +23,7 @@ function App() {
   const dispatch = useDispatch();
   const [characters, setCharacters] = useState([]);
   const [alert, setAlert] = useState({});
-  const [access, setAccess] = useState(false);      
+  const [access, setAccess] = useState(false);
   const EMAIL = "jhosno.dev@gmail.com";
   const PASSWORD = "qwerty12";
 
@@ -64,7 +64,7 @@ function App() {
     dispatch(removeFav(id));
     setCharacters(result);
   };
- 
+
   const login = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
       setAccess(true);
@@ -78,9 +78,13 @@ function App() {
   };
 
   const logout = () => setAccess(false);
-  useEffect((navigate) => {
-    !access && navigate("/");
-  }, [access]);
+
+  useEffect(
+    () => {
+      !access && navigate("/");
+    },
+    [access, navigate]
+  );
   useEffect(() => {}, [alert]);
 
   return (

@@ -22,7 +22,7 @@ const rootReducer = (state = stateInitial, action) => {
       };
     case FILTER:
       //let filter = [...state.allCharacters];
-      console.log(action.payload);
+
       /*       let genderFilter = state.allCharacters.filter((char) => char.gender === action.payload);
       return {
         characters: genderFilter,
@@ -30,13 +30,14 @@ const rootReducer = (state = stateInitial, action) => {
 
       return {
         ...state,
-        characters: state.allCharacters.filter(
-          (e) => e.gender === action.payload
-        ),
+        characters:
+          action.payload === "all"
+            ? [...state.allCharacters]
+            : state.allCharacters.filter((e) => e.gender === action.payload),
       };
 
     case ORDER:
-     // let order = [...state.allCharacters];
+      // let order = [...state.allCharacters];
       return {
         ...state,
         characters: state.allCharacters.sort((a, b) =>
@@ -48,7 +49,7 @@ const rootReducer = (state = stateInitial, action) => {
 
       return {
         ...state,
-        favorites: [...state.allCharacters],
+        characters: [...state.allCharacters],
       };
     default:
       return { ...state };
