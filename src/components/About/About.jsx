@@ -29,7 +29,7 @@ const About = () => {
         </div>
         <img
           src="https://pbs.twimg.com/profile_images/1541820760192425986/viOj940y_400x400.jpg"
-          alt="about picture"
+          alt="Jhosno"
         />
       </div>
     </div>

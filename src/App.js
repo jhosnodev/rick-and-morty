@@ -19,14 +19,19 @@ import Favorites from "./components/favorites/favorites";
 // import characters from "./data.js";
 function App() {
   const navigate = useNavigate();
-
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
   const [characters, setCharacters] = useState([]);
   const [alert, setAlert] = useState({});
+  const [access, setAccess] = useState(false);      
+  const EMAIL = "jhosno.dev@gmail.com";
+  const PASSWORD = "qwerty12";
+
   const IDChecker = (id) => {
     //const result = characters.map((char) => char.id);
     return characters.map((char) => char.id).includes(Number(id));
   };
+
   function onSearch(id) {
     if (IDChecker(id)) {
       setAlert({
@@ -53,14 +58,13 @@ function App() {
         });
     }
   }
+
   const onClose = (id) => {
     const result = characters.filter((char) => char.id !== id);
     dispatch(removeFav(id));
     setCharacters(result);
   };
-  const [access, setAccess] = useState(false);
-  const EMAIL = "jhosno.dev@gmail.com";
-  const PASSWORD = "qwerty12";
+ 
   const login = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
       setAccess(true);
@@ -74,11 +78,10 @@ function App() {
   };
 
   const logout = () => setAccess(false);
-  useEffect(() => {
+  useEffect((navigate) => {
     !access && navigate("/");
   }, [access]);
   useEffect(() => {}, [alert]);
-  const { pathname } = useLocation();
 
   return (
     <div className="App" id="app">
