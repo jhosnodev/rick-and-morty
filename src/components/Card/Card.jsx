@@ -29,7 +29,7 @@ function Card({
       addFav({ id, name, status, species, gender, origin, image });
     }
   };
-  useEffect(() => {
+  useEffect((id) => {
     myFavorites?.forEach((fav) => {
       if (fav.id === id) {
         setIsFav(true);
