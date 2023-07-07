@@ -36,7 +36,7 @@ const rootReducer = (state = stateInitial, action) => {
       };
 
     case ORDER:
-      let order = [...state.allCharacters];
+     // let order = [...state.allCharacters];
       return {
         ...state,
         characters: state.allCharacters.sort((a, b) =>

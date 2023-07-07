@@ -3,7 +3,7 @@ import React from "react";
 import Card from "../Card/Card";
 import "./Favorites.css";
 import { filterFav, orderFav } from "../../redux/actions/actions";
-import { useDispatch, connect, useSelector } from "react-redux";
+import { useDispatch, connect } from "react-redux";
 import { useState } from "react";
 
 const Favorites = ({ onClose, myFavorites }) => {

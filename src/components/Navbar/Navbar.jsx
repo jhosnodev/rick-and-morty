@@ -4,7 +4,7 @@ import "../SearchBar/SearchBar.css";
 import "./Navbar.css";
 import { Link, NavLink } from "react-router-dom";
 import SearchBar from "../SearchBar/SearchBar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Navbar = ({ onSearch, logout, access }) => {
   const [vissibleMenu, setVissibleMenu] = useState(false);

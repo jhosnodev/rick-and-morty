@@ -1,6 +1,6 @@
 import "./SearchBar.css";
 import { useState } from "react";
-import random from "./random.svg";
+
 export default function SearchBar({ onSearch }) {
   const [id, setID] = useState("");
   const [alert, setAlert] = useState(false);

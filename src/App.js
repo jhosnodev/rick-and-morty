@@ -8,7 +8,7 @@ import Alert from "./components/Alert/Alert";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Detail from "./components/detail/Detail";
-import { connect, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeFav } from "./redux/actions/actions";
 
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
