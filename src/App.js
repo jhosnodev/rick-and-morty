@@ -18,6 +18,8 @@ import Favorites from "./components/favorites/favorites";
 
 // import characters from "./data.js";
 function App() {
+  const navigate = useNavigate();
+
   const dispatch = useDispatch();
   const [characters, setCharacters] = useState([]);
   const [alert, setAlert] = useState({});
@@ -71,7 +73,6 @@ function App() {
     }
   };
 
-  const navigate = useNavigate();
   const logout = () => setAccess(false);
   useEffect(() => {
     !access && navigate("/");

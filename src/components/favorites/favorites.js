@@ -41,6 +41,8 @@ const Favorites = ({ onClose, myFavorites }) => {
             <option value={"Male"}>Male</option>
             <option value={"Genderless"}>Genderless</option>
             <option value={"unknown"}>Unknow</option>
+            <option value={"all"}>All</option>
+            
           </select>
         </label>
         <button onClick={handleReset}>Reset </button>
