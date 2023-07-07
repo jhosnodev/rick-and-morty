@@ -45,8 +45,8 @@ const Navbar = ({ onSearch, logout, access }) => {
           <path
             d="M5 8H13.75M5 12H19M10.25 16L19 16"
             stroke="#c8df6a"
-            stroke-linecap="round"
-            stroke-linejoin="round"
+            strokeLinecap="round"
+            strokeLinejoin="round"
           />
         </svg>
       </button>
@@ -55,6 +55,9 @@ const Navbar = ({ onSearch, logout, access }) => {
 
       <NavLink to={"/home"} className={""}>
           Home
+        </NavLink>
+        <NavLink to={"/favorites"} className={"navbar___links"}>
+          Favs
         </NavLink>
         <NavLink to={"/about"} className={""}>
           About

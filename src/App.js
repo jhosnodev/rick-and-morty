@@ -8,6 +8,9 @@ import Alert from "./components/Alert/Alert";
 import Footer from "./components/Footer/Footer";
 import About from "./components/About/About";
 import Detail from "./components/detail/Detail";
+import { connect, useDispatch } from "react-redux";
+import { removeFav } from "./redux/actions/actions";
+
 import { Route, Routes, useNavigate, useLocation } from "react-router-dom";
 import Error from "./components/error404/Error";
 import Form from "./components/Form/Form";
@@ -15,6 +18,7 @@ import Favorites from "./components/favorites/favorites";
 
 // import characters from "./data.js";
 function App() {
+  const dispatch = useDispatch();
   const [characters, setCharacters] = useState([]);
   const [alert, setAlert] = useState({});
   const IDChecker = (id) => {
@@ -23,22 +27,20 @@ function App() {
   };
   function onSearch(id) {
     if (IDChecker(id)) {
-  
       setAlert({
-        message:"ID repetido",
+        message: "ID repetido",
         type: "error",
-      })
+      });
     } else {
       axios(`https://rickandmortyapi.com/api/character/${id}`)
         .then(({ data }) => {
           if (data.name) {
             setCharacters((oldChars) => [...oldChars, data].reverse());
           } else {
-
             setAlert({
               message: "¡No hay personajes con este ID!",
               type: "error",
-            })
+            });
           }
         })
         .catch(({ message }) => {
@@ -51,11 +53,12 @@ function App() {
   }
   const onClose = (id) => {
     const result = characters.filter((char) => char.id !== id);
+    dispatch(removeFav(id));
     setCharacters(result);
   };
   const [access, setAccess] = useState(false);
   const EMAIL = "jhosno.dev@gmail.com";
-  const PASSWORD = "password11";
+  const PASSWORD = "qwerty12";
   const login = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
       setAccess(true);

@@ -19,7 +19,7 @@ const Detail = () => {
     );
     return setCharacter({});
   }, [id]);
-  console.log(character);
+
   return (
     <main className="detail___container">
       <div className="detail___header">

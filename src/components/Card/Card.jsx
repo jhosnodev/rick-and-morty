@@ -1,6 +1,6 @@
 import "./Card.css";
 import { NavLink } from "react-router-dom";
-import { Connect, connect } from "react-redux";
+import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/actions/actions";
 import { useState, useEffect } from "react";
 function Card({
@@ -14,7 +14,7 @@ function Card({
   onClose,
   addFav,
   removeFav,
-  myFavorites
+  myFavorites,
 }) {
   const getIDToClose = () => {
     onClose(id);
@@ -30,12 +30,12 @@ function Card({
     }
   };
   useEffect(() => {
-    myFavorites.forEach((fav) => {
-       if (fav.id === id) {
-          setIsFav(true);
-       }
+    myFavorites?.forEach((fav) => {
+      if (fav.id === id) {
+        setIsFav(true);
+      }
     });
- }, [myFavorites]);
+  }, [myFavorites]);
   return (
     <article className="card">
       {" "}
@@ -43,7 +43,7 @@ function Card({
         <div className="card___info-header">
           <p>{id}</p>
           <div>
-            {isFav ? (  
+            {isFav ? (
               <button onClick={handleFavorite}>❤️</button>
             ) : (
               <button onClick={handleFavorite}>🤍</button>
@@ -55,13 +55,14 @@ function Card({
           <NavLink to={`detail/${id}`}>
             <h2>{name}</h2>
           </NavLink>
+          {gender}
           <NavLink to={`detail/${id}`} className={"navbar___search-random-btn"}>
             <svg
               fill="#c8df6a"
               width="1rem"
               height="1rem"
               viewBox="0 0 32 32"
-              enable-background="new 0 0 32 32"
+              enableBackground="new 0 0 32 32"
               id="Glyph"
               version="1.1"
             >
@@ -80,7 +81,7 @@ function Card({
   );
 }
 export function mapStateToProps(state) {
-  return {myFavorites : state.characters}
+  return { myFavorites: state.allCharacters };
 }
 export function mapDispatchToProps(dispatch) {
   return {
