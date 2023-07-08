@@ -29,6 +29,7 @@ const Form = ({ login }) => {
   return (
     <main className="login___container">
       <h2>Has login para empezar</h2>
+          <span >jhosno.dev@gmail.com | qwerty12</span>
       <form className="login___form" onSubmit={handleSubmit}>
         <label htmlFor="email">
           Email

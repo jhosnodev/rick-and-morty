@@ -45,8 +45,6 @@ const rootReducer = (state = stateInitial, action) => {
         ),
       };
     case "RESET":
-      console.log("reset");
-
       return {
         ...state,
         characters: [...state.allCharacters],
