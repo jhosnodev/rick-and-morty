@@ -45,7 +45,7 @@ const Favorites = ({ onClose, myFavorites }) => {
             
           </select>
         </label>
-        <button onClick={handleReset}>Reset </button>
+        <button onClick={handleReset} className="navbar___search-random-btn">Reset </button>
       </div>
       <div className="favorite___cards-container">
         {myFavorites.length === 0 ? (

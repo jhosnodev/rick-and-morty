@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import { connect } from "react-redux";
 import { addFav, removeFav } from "../../redux/actions/actions";
 import { useState, useEffect } from "react";
+
 function Card({
   id,
   name,
@@ -16,10 +17,13 @@ function Card({
   removeFav,
   myFavorites,
 }) {
+
+  const [isFav, setIsFav] = useState(false);
+
   const getIDToClose = () => {
     onClose(id);
   };
-  const [isFav, setIsFav] = useState(false);
+
   const handleFavorite = () => {
     if (isFav) {
       setIsFav(false);
@@ -29,13 +33,18 @@ function Card({
       addFav({ id, name, status, species, gender, origin, image });
     }
   };
-  useEffect((id) => {
-    myFavorites?.forEach((fav) => {
-      if (fav.id === id) {
-        setIsFav(true);
-      }
-    });
-  }, [myFavorites]);
+  useEffect(
+    () => {
+    
+      myFavorites.forEach((fav) => {
+        if (fav.id === id) {
+          setIsFav(true);
+        }
+      });
+    },
+    [myFavorites, id]
+  );
+  
   return (
     <article className="card">
       {" "}
@@ -81,7 +90,7 @@ function Card({
   );
 }
 export function mapStateToProps(state) {
-  return { myFavorites: state.allCharacters };
+  return { myFavorites: state.characters };
 }
 export function mapDispatchToProps(dispatch) {
   return {
