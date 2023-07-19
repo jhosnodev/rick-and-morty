@@ -67,7 +67,7 @@ function App() {
 
   const login = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
-      setAccess(true);
+      setAccess(!access);
       navigate("/home");
     } else {
       setAlert({
@@ -77,7 +77,7 @@ function App() {
     }
   };
 
-  const logout = () => setAccess(false);
+  const logout = () => setAccess(!access);
 
   useEffect(
     () => {

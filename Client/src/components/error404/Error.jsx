@@ -8,7 +8,7 @@ const Error = () => {
       <div className="error___text">
         <h1>Are you lost?</h1>
         <p>You can come back to home and rest. </p>
-        <NavLink to='/'>Take me back!</NavLink>
+        <NavLink to='/home'>Take me back!</NavLink>
       </div>
     </div>
   );
