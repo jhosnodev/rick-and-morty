@@ -39,7 +39,7 @@ function App() {
         type: "error",
       });
     } else {
-      axios(`https://rickandmortyapi.com/api/character/${id}`)
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
         .then(({ data }) => {
           if (data.name) {
             setCharacters((oldChars) => [...oldChars, data].reverse());
@@ -79,12 +79,9 @@ function App() {
 
   const logout = () => setAccess(!access);
 
-  useEffect(
-    () => {
-      !access && navigate("/");
-    },
-    [access, navigate]
-  );
+  useEffect(() => {
+    !access && navigate("/");
+  }, [access, navigate]);
   useEffect(() => {}, [alert]);
 
   return (
