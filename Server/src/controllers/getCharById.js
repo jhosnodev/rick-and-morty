@@ -5,7 +5,8 @@ const getCharById = (res, id) => {
     .then(({ data }) => {
       const { name, gender, species, origin, image, status } = data;
       res.writeHead(200, { "Content-Type": "application/json" });
-      res.end(JSON.stringify(id, name, gender, species, origin, image, status));
+      res.end(JSON.stringify({id, name, gender, species, origin, image, status}));
+      //res.end(JSON.stringify('dasdsS'));
     })
     .catch((error) => {
       res.writeHead(500, { "Content-type": "text/plain" });

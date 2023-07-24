@@ -1,6 +1,6 @@
 const http = require("http");
 const getCharById = require('./controllers/getCharById')
-const characters = require("./utils/data");
+//const characters = require("./utils/data");
 
 http
   .createServer((req, res) => {
@@ -8,6 +8,7 @@ http
     if (req.url.startsWith("/rickandmorty/character")) {
       
       let param = parseInt(req.url.split("/")[3]);
+
       getCharById(res, param)
     }
   })
