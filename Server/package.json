@@ -8,12 +8,15 @@
   },
   "scripts": {
     "test": "test",
-    "start" : "node ./src/index.js",
-    "dev" : "nodemon ./src/index.js"
+    "start": "node ./src/index.js",
+    "dev": "nodemon ./src/index.js"
   },
   "author": "Jhosno Hernandez",
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "axios": "^1.4.0"
   }
 }
