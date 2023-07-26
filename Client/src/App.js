@@ -31,14 +31,32 @@ function App() {
     return characters.map((char) => char.id).includes(Number(id));
   };
 
-  function onSearch(id) {
+  async function onSearch(id) {
     if (IDChecker(id)) {
       setAlert({
         message: "ID repetido",
         type: "error",
       });
     } else {
-      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      try {
+        const {data} = await axios(`http://localhost:3001/rickandmorty/character/${id}`)
+        //const data = response.data
+        if (data.name) {
+          setCharacters((oldChars) => [...oldChars, data].reverse());
+        } else {
+          setAlert({
+            message: "¡No hay personajes con este ID!",
+            type: "error",
+          });
+        }
+      } catch ({message}) {
+        setAlert({
+          message: message,
+          type: "error",
+        });
+      }
+      //! promesas
+ /*      axios(`http://localhost:3001/rickandmorty/character/${id}`)
         .then(({ data }) => {
           if (data.name) {
             setCharacters((oldChars) => [...oldChars, data].reverse());
@@ -54,7 +72,7 @@ function App() {
             message: message,
             type: "error",
           });
-        });
+        }); */
     }
   }
 
