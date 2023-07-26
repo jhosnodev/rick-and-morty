@@ -3,8 +3,10 @@ import axios from "axios";
 //recibe una propiedad que se llama payload
 export const addFav = (character) => {
   const endpointLocal = "http://localhost:3001/rickandmorty/fav";
+  console.log(character);
   return (dispatch) => {
     axios.post(endpointLocal, character).then(({ data }) => {
+      console.log(data);
       return dispatch({
         type: ADD_FAV,
         payload: data,
@@ -16,6 +18,7 @@ export const removeFav = (id) => {
   const endpointLocal = "http://localhost:3001/rickandmorty/fav/" + id;
   return (dispatch) => {
     axios.delete(endpointLocal).then(({ data }) => {
+      console.log(data);
       return dispatch({
         type: REMOVE_FAV,
         payload: data,

@@ -8,18 +8,24 @@ const rootReducer = (state = stateInitial, action) => {
     case ADD_FAV:
       return {
         ...state,
+        characters: action.payload,
+        allCharacters: action.payload,
+      };
+  /*     return {
+        ...state,
         characters: [...state.characters, action.payload],
         allCharacters: [...state.allCharacters, action.payload],
-      };
+      }; */
     case REMOVE_FAV:
-      let remove = state.characters.filter(
+      return { ...state, characters: action.payload };
+   /*    let remove = state.characters.filter(
         (character) => parseInt(character.id) !== action.payload
       );
       return {
         ...state,
         characters: remove,
         allCharacters: remove,
-      };
+      }; */
     case FILTER:
       //let filter = [...state.allCharacters];
 

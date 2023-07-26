@@ -24,8 +24,7 @@ function App() {
   const [characters, setCharacters] = useState([]);
   const [alert, setAlert] = useState({});
   const [access, setAccess] = useState(false);
-  const EMAIL = "jhosno.dev@gmail.com";
-  const PASSWORD = "qwerty12";
+
 
   const IDChecker = (id) => {
     //const result = characters.map((char) => char.id);
@@ -100,6 +99,7 @@ function App() {
     !access && navigate("/");
   }, [access, navigate]);
   useEffect(() => {}, [alert]);
+
 
   return (
     <div className="App" id="app">

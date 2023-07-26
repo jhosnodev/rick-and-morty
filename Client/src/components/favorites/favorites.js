@@ -7,6 +7,7 @@ import { useDispatch, connect } from "react-redux";
 import { useState } from "react";
 
 const Favorites = ({ onClose, myFavorites }) => {
+  console.log(myFavorites);
   const [aux, setAux] = useState(false);
   const dispatch = useDispatch();
   const handleOrder = (e) => {
@@ -42,15 +43,18 @@ const Favorites = ({ onClose, myFavorites }) => {
             <option value={"Genderless"}>Genderless</option>
             <option value={"unknown"}>Unknow</option>
             <option value={"all"}>All</option>
-            
           </select>
         </label>
-        <button onClick={handleReset} className="navbar___search-random-btn">Reset </button>
+        <button onClick={handleReset} className="navbar___search-random-btn">
+          Reset{" "}
+        </button>
       </div>
       <div className="favorite___cards-container">
         {myFavorites.length === 0 ? (
-          <div>
-            <p>Te falta odio</p>
+          <div className="message">
+          <h2>😨😨</h2>
+          <h2>No hay nada que mostrar </h2>
+            <p>Agrega personajes para que sea más divertido</p>
           </div>
         ) : (
           myFavorites?.map((character) => (
@@ -60,7 +64,7 @@ const Favorites = ({ onClose, myFavorites }) => {
               status={character.status}
               species={character.species}
               gender={character.gender}
-              origin={character.origin.name}
+              origin={character.origin?.name}
               image={character.image}
               key={character.id}
               onClose={onClose}
