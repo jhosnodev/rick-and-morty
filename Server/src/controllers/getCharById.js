@@ -5,9 +5,9 @@ const getCharById = async (req, res) => {
   //* async await
   try {
     const { id } = req.params;
-    console.log(typeof Number(id));
+
     const response = await axios(`${URL}${Number(id)}`);
-    console.log(response.data);
+
     const { status, name, species, gender, origin, image } = response.data;
     const character = { id, status, name, species, gender, origin, image };
 

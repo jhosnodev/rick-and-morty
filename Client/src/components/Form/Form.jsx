@@ -1,8 +1,9 @@
 import React from "react";
+import Alert from "../Alert/Alert";
 import { useState } from "react";
 import errors from "./validations";
 import "./Form.css";
-const Form = ({ login }) => {
+const Form = ({ login, setAlert }) => {
   const [userData, setUserData] = useState({
     email: "",
     password: "",
@@ -24,6 +25,10 @@ const Form = ({ login }) => {
       login(userData);
     } else {
       console.log("asegurate de que los datos sean los correctos!");
+      setAlert({
+        message: "Asegurate de que los datos sean los correctos!",
+        type: "warning",
+      });
     }
   };
   return (

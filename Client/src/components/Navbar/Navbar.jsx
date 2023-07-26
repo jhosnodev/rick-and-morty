@@ -9,7 +9,6 @@ import { useState } from "react";
 const Navbar = ({ onSearch, logout, access }) => {
   const [vissibleMenu, setVissibleMenu] = useState(false);
   const handleCloseMenu = () => {
-    console.log("manejando el menu close");
     setVissibleMenu(!vissibleMenu);
   };
   return (

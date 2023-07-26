@@ -7,7 +7,7 @@ import { useDispatch, connect } from "react-redux";
 import { useState } from "react";
 
 const Favorites = ({ onClose, myFavorites }) => {
-  console.log(myFavorites);
+
   const [aux, setAux] = useState(false);
   const dispatch = useDispatch();
   const handleOrder = (e) => {

@@ -122,7 +122,7 @@ function App() {
   return (
     <div className="App" id="app">
       {pathname !== "/" ? (
-        <Navbar onSearch={onSearch} logout={logout} access={access} />
+        <Navbar onSearch={onSearch} logout={logout} access={access} setAlert= {setAlert} />
       ) : null}
       {alert.message ? (
         <Alert message={alert.message} type={alert.type} setAlert={setAlert} />
