@@ -65,7 +65,7 @@ function App() {
     setCharacters(result);
   };
 
-  const login = (userData) => {
+  /*   const login = (userData) => {
     if (userData.email === EMAIL && userData.password === PASSWORD) {
       setAccess(!access);
       navigate("/home");
@@ -75,7 +75,24 @@ function App() {
         type: "warning",
       });
     }
-  };
+  }; */
+
+  function login(userData) {
+    const { email, password } = userData;
+    const URL = "http://localhost:3001/rickandmorty/login/";
+    axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+      const { access } = data;
+      if (access) {
+        setAccess(access);
+      } else {
+        setAlert({
+          message: "¡Email o contraseña inválidos!",
+          type: "warning",
+        });
+      }
+      access && navigate("/home");
+    });
+  }
 
   const logout = () => setAccess(!access);
 

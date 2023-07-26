@@ -1,8 +1,8 @@
 const credentials = require("../utils/users");
 const users = (req, res) => {
-  const { user, pass } = req.query;
+  const { email, password } = req.query;
   const result = credentials.find(
-    (cred) => cred.email === user && cred.password === pass
+    (cred) => cred.email === email && cred.password === password
   );
   // res.status(200).json(result.email)
   if (result) {

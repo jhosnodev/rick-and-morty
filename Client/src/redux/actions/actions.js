@@ -1,15 +1,26 @@
 import { ADD_FAV, REMOVE_FAV, ORDER, FILTER } from "./actionsTypes";
+import axios from "axios";
 //recibe una propiedad que se llama payload
 export const addFav = (character) => {
-  return {
-    type: ADD_FAV,
-    payload: character,
+  const endpointLocal = "http://localhost:3001/rickandmorty/fav";
+  return (dispatch) => {
+    axios.post(endpointLocal, character).then(({ data }) => {
+      return dispatch({
+        type: ADD_FAV,
+        payload: data,
+      });
+    });
   };
 };
 export const removeFav = (id) => {
-  return {
-    type: REMOVE_FAV,
-    payload: id,
+  const endpointLocal = "http://localhost:3001/rickandmorty/fav/" + id;
+  return (dispatch) => {
+    axios.delete(endpointLocal).then(({ data }) => {
+      return dispatch({
+        type: REMOVE_FAV,
+        payload: data,
+      });
+    });
   };
 };
 export const filterFav = (gender) => {
