@@ -17,16 +17,17 @@ const sequelize = new Sequelize(
 
 // EJERCICIO 05
 // Debajo de este comentario puedes ejecutar la función de los modelos.
-
+   
 //
-Favorite(sequelize)
-User(sequelize)
+modelFavorite(sequelize);
+modelUser(sequelize);
 //
 
 // Ejercicio 06
 // ¡Relaciona tus modelos aquí abajo!
-// const { User, Favorite } = sequelize.models;
-
+const { User, Favorite } = sequelize.models;
+User.belongsToMany(Favorite, { through: "user_favorite" });
+Favorite.belongsToMany(User, { through: "user_favorite" });
 
 module.exports = {
   // User,
