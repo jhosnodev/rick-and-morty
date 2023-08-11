@@ -15,9 +15,7 @@ const About = () => {
             sistemas personalizados. Aparte de renovar y mantener módulos o
             vistas. Adoro escuchar música, mi gata, la ilustración y el diseño
             en muchas de sus vertientes. Estoy enfocada en el trabajo frontend y
-            trabajar en proyectos grandes y enriquecedores de forma remota. Aquí
-            en mi blog podrás encontrar parte de mis experiencias y
-            aprendizajes.
+            trabajar en proyectos grandes y enriquecedores de forma remota.
           </p>
           <div className="about___RRSS">
             <a href="https://twitter.com/jhosno">Twitter</a>
