@@ -10,10 +10,13 @@ module.exports = (sequelize) => {
         primartKey: true,
       },
       email: {
-         type: DataTypes.TEXT,
-         allowNull: false,
-         primartKey: true,
-      }
+        type: DataTypes.TEXT,
+        allowNull: false,
+        primartKey: true,
+        validate: {
+          isEmail: true,
+        },
+      },
     },
     { timestamps: false }
   );
